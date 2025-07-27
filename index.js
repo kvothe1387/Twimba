@@ -16,7 +16,18 @@ function handleLikeClick(tweetId) {
   const targetTweetObj = tweetsData.filter(function (tweet) {
     return tweet.uuid === tweetId
   })[0]
-  targetTweetObj.likes++
+
+  //when tweet is liked, its 'isliked' prop should be set to true
+  targetTweetObj.isLiked = !targetTweetObj.isLiked
+
+  // + or - like count
+  if (targetTweetObj.isLiked) {
+    targetTweetObj.likes--
+  } else {
+    targetTweetObj.likes++
+  }
+  targetTweetObj.isLiked = !targetTweetObj.isLiked
+
   render()
 }
 
@@ -25,7 +36,7 @@ function getFeedHtml() {
   let feedHtml = ""
 
   tweetsData.forEach(function (tweet) {
-    feedHtml += `
+    feedHtml += `  
       <div class="tweet">
             <div class="tweet-inner">
                 <img src="${tweet.profilePic}" class="profile-pic">
