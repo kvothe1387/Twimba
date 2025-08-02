@@ -8,7 +8,7 @@ A Twitter-like social media application built with vanilla JavaScript, HTML, and
 
 ## 📸 Screenshot
 
-![Twimba Screenshot](images\screenshot.png)
+<img src="./images/screenshot.png" height="500"/>
 
 
 ## 🔥 Features
